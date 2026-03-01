@@ -19,3 +19,244 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+tanzania_corridor_propagation_architecture
+Corridor-Based Spatial Propagation Modeling Framework for Tanzania
+
+Reproducible geospatial modeling architecture supporting the submission to the
+International Journal of Applied Earth Observation and Geoinformation (JAG)
+
+1. Scientific Contribution
+
+This repository implements a reproducible geospatial modeling framework for corridor-constrained spatial propagation analysis in Tanzania using:
+
+Earth Observation (EO) data
+
+Socioeconomic indicators
+
+Corridor-defined spatial adjacency
+
+Spatial Durbin Modeling (SDM)
+
+Unlike classical contiguity- or distance-based spatial models, this framework introduces a corridor-constrained spatial weights structure that restricts spatial spillovers to predefined infrastructure or development corridors.
+
+This allows modeling of:
+
+Directional development diffusion
+
+Infrastructure-mediated propagation
+
+Corridor-based spatial dependency
+
+Policy transmission effects
+
+The framework formalizes corridor propagation within an extended Spatial Durbin Model.
+
+2. Conceptual Model
+
+Let:
+
+𝑖
+=
+1
+,
+.
+.
+.
+,
+𝑁
+i=1,...,N be spatial units (regions)
+
+𝐶
+=
+{
+𝑐
+1
+,
+.
+.
+.
+,
+𝑐
+𝑘
+}
+C={c
+1
+	​
+
+,...,c
+k
+	​
+
+} be defined development corridors
+
+𝑊
+𝑐
+W
+c
+	​
+
+ be the corridor-constrained spatial weights matrix
+
+𝑌
+Y be the dependent variable
+
+𝑋
+X be covariates derived from EO and socioeconomic data
+
+The corridor-based Spatial Durbin Model is defined as:
+
+𝑌
+=
+𝜌
+𝑊
+𝑐
+𝑌
++
+𝑋
+𝛽
++
+𝑊
+𝑐
+𝑋
+𝜃
++
+𝜀
+Y=ρW
+c
+	​
+
+Y+Xβ+W
+c
+	​
+
+Xθ+ε
+
+Where:
+
+𝑊
+𝑐
+W
+c
+	​
+
+ replaces classical contiguity matrices
+
+Spillovers occur only along corridor-defined links
+
+𝜌
+ρ captures endogenous corridor propagation
+
+𝜃
+θ captures exogenous spillover effects
+
+This architecture operationalizes spatial diffusion constrained by development corridors.
+
+3. Repository Structure
+tanzania_corridor_propagation_architecture/
+
+├── data_raw/              # Original EO and socioeconomic datasets
+├── data_processed/        # Cleaned and harmonized datasets
+├── weights_matrices/      # Corridor-based spatial weights matrices
+├── scripts/               # Modeling and processing scripts
+├── figures/               # Publication-ready figures
+├── results/               # Model outputs
+├── replication/           # Reproducibility instructions
+└── docs/                  # Supplementary documentation
+
+This structure follows best practices for computational reproducibility in spatial modeling.
+
+4. Data Sources
+
+Data include:
+
+Sentinel-2 derived EO indicators
+
+Regional socioeconomic statistics
+
+Corridor definitions (infrastructure-based)
+
+Spatial boundary data (Tanzania administrative regions)
+
+EO preprocessing and feature extraction follow standardized geospatial workflows.
+
+Restricted or licensed data are not redistributed but are described in the manuscript.
+
+5. Computational Environment
+
+Recommended environment:
+
+R (≥ 4.2) or Python (≥ 3.10)
+
+Required spatial packages:
+
+spdep
+
+sf
+
+spatialreg
+
+raster
+
+terra
+
+rgdal
+
+tidyverse
+
+All required packages are listed within the /replication/ folder.
+
+6. Reproducibility Workflow
+
+Execution order:
+
+01_data_preparation
+
+02_corridor_matrix_construction
+
+03_model_estimation
+
+04_spillover_analysis
+
+05_figure_generation
+
+All intermediate outputs are stored in /data_processed/ and /results/.
+
+The pipeline is fully modular to allow extension or adaptation to other geographic contexts.
+
+7. Methodological Innovation
+
+This repository introduces:
+
+Corridor-constrained spatial weights construction
+
+Infrastructure-based spillover modeling
+
+EO-integrated SDM architecture
+
+Directionally restricted spatial propagation framework
+
+The approach extends traditional spatial econometric models by embedding physical development corridors directly into the spatial interaction matrix.
+
+8. Intended Use
+
+This repository supports:
+
+Replication of published results
+
+Extension of corridor-based modeling to other regions
+
+Testing alternative corridor definitions
+
+Comparative analysis with classical spatial weights
+
+It is not intended for direct policy decision-making without contextual validation.
+
+9. Citation
+
+If using this framework, please cite:
+
+Sitenda, A. (2026). Corridor-Based Spatial Propagation Modeling Using EO Data and Spatial Durbin Framework: Evidence from Tanzania. Submitted to International Journal of Applied Earth Observation and Geoinformation.
+
+10. License
+
+This project is released under the MIT License.
