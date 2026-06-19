@@ -1,0 +1,4 @@
+Buffer_Configuration,Spatial_Lag_rho,AIC,Spillover_Contribution
+10km_Core_50km_Spillover,0.0438,7447.12,4.52
+15km_Core_50km_Spillover,0.0466,7439.65,4.66
+15km_Core_60km_Spillover,0.0479,7441.03,4.74
