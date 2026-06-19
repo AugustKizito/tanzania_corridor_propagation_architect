@@ -1,0 +1,4 @@
+Spatial_Weight_Matrix,Spatial_Lag_rho,p_value,AIC,Spillover_Contribution
+Queen_Contiguity,0.0466,0.0016,7439.65,4.66
+Inverse_Distance,0.0449,0.0021,7444.28,4.58
+Gaussian_Kernel,0.0483,0.0012,7436.91,4.72
