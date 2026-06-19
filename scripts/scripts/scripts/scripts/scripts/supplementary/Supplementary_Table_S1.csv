@@ -1,0 +1,8 @@
+Variable,Coefficient,Std_Error,z-Statistic,p-value
+Spatial_Lag_rho,0.0466,0.0148,3.157,0.0016
+Constant,0.5033,0.1702,2.958,0.0031
+NDVI,-1.3408,0.3469,-3.865,0.0001
+MNDWI,0.1843,0.3168,0.582,0.5608
+Population_Density,-0.1388,0.0389,-3.566,0.0004
+Rainfall,0.0708,0.0016,45.675,<0.0001
+NTL_x_NDVI,6.4424,0.0908,70.946,<0.0001
